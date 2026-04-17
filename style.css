@@ -548,8 +548,8 @@ position: absolute;
 }
 
 .about-content p {
-  color: #ddd;
-  margin-bottom: 16px;
+  color: #ffffff;
+  margin-bottom: 2px;
   line-height: 1.7;
 }
 
@@ -1234,8 +1234,8 @@ position: absolute;
   }
 
   .hero-subtext {
-    font-size: 14px;
-    margin-bottom: 150px;
+    font-size: 11px;
+    margin-bottom: 162px;
     color: #fff;
     text-shadow: 0 3px 12px rgba(0, 0, 0, 0.45);
   }
@@ -1248,8 +1248,8 @@ position: absolute;
   gap: 8px;
   flex-wrap: nowrap; /* FORCE single line */
   width: 50%;
-  margin-left: 10px;
-  margin-bottom: -10px;
+  margin-left: 13px;
+  margin-bottom: -18px;
 }
 
 .hero-badge {
@@ -1298,7 +1298,7 @@ position: absolute;
   /* 🔥 ICONS SMALL + CLEAN */
 .hero-icons {
   position: absolute;   /* ✅ sticks inside hero */
-  top: 130px;           /* same as desktop */
+  top: 35px;           /* same as desktop */
   right: 15px;
 
   display: flex;
@@ -1322,6 +1322,16 @@ position: absolute;
 /* ICON SIZE */
 .hero-icon svg,
 .wa-icon {
+   color: #25D366;
+
+  /* 🔥 Glass effect */
+ 
+  border-radius: 50%;
+
+  /* ✅ CENTER ICON */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 24px;
   height: 24px;
 }
@@ -1456,7 +1466,7 @@ position: absolute;
   }
 
   .about-content p {
-    font-size: 14px;
+    font-size: 13px;
   }
 
 }
@@ -1500,14 +1510,15 @@ position: absolute;
 @media (max-width: 768px) {
 
   .about-hero-section {
-    padding: 50px 20px;
-     min-height: 50vh;
-    text-align: left;   /* ✅ LEFT ALIGN */
+    min-height: 71vh;   /* 🔥 reduce height */
+    height: auto;       /* override 100vh */
+    
+    padding: 20px 15px 40px;  /* reduce top & bottom space */
   }
 
-  .about-overlay {
-    justify-content: flex-start;  /* ✅ keep left */
-  }
+ .about-overlay {
+  background: none !important;
+}
 
   .about-wrapper {
     justify-content: flex-start;  /* ✅ keep left */
@@ -1531,7 +1542,7 @@ position: absolute;
   }
 
   .about-content p {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .about-list {
@@ -1550,12 +1561,13 @@ position: absolute;
     font-size: 34px;
   }
     .about-hero-section {
-    min-height: 55vh;   /* ⬅️ compact hero */
-    padding: 40px 15px;
+     /* ⬅️ compact hero */
+    padding: 10px 15px 90px;
+ 
   }
 
   .about-content p {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .about-list li {
@@ -1939,8 +1951,9 @@ position: absolute;
 
   /* 🔥 FIX WIDTH ISSUE (important for iPhone SE & XR) */
   .container {
-    margin-top: -5px;
+    margin-top: 5px;
     width: 92%;
+    margin-bottom: 0px;
   }
 
   .contact-info,
@@ -1974,7 +1987,7 @@ position: absolute;
 
   /* BUTTON */
   .btn {
-    width: 100%;
+    width: 60%;
     padding: 12px;
     font-size: 14px;
   }
