@@ -1,104 +1,98 @@
-// MOBILE MENU
+// ================= NAVBAR SCROLL EFFECT =================
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (navbar) {
+    if (window.scrollY > 50) {
+      navbar.classList.add("sticky");
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+});
+
+
+// ================= HERO ANIMATION =================
+window.addEventListener("load", () => {
+  const heroContent = document.querySelector(".hero-content");
+
+  if (heroContent) {
+    heroContent.style.opacity = "0";
+    heroContent.style.transform = "translateY(40px)";
+    heroContent.style.transition = "all 1s ease";
+
+    setTimeout(() => {
+      heroContent.style.opacity = "1";
+      heroContent.style.transform = "translateY(0)";
+    }, 200);
+  }
+});
+
+
+// ================= SCROLL REVEAL =================
+const revealItems = document.querySelectorAll(
+  ".service-card, .stat-box, .faq-item, .contact-info, .contact-form"
+);
+
+window.addEventListener("scroll", () => {
+  const triggerBottom = window.innerHeight * 0.85;
+
+  revealItems.forEach(item => {
+    const boxTop = item.getBoundingClientRect().top;
+
+    if (boxTop < triggerBottom) {
+      item.style.opacity = "1";
+      item.style.transform = "translateY(0)";
+      item.style.transition = "all 0.8s ease";
+    }
+  });
+});
+
+revealItems.forEach(item => {
+  item.style.opacity = "0";
+  item.style.transform = "translateY(40px)";
+});
+
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
 if (menuBtn) {
   menuBtn.addEventListener("click", () => {
-    navLinks.classList.toggle("show");
+    navLinks.classList.toggle("active");
   });
 }
 
-// CLOSE MENU ON CLICK
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
-    navLinks.classList.remove("show");
+    navLinks.classList.remove("active");
   });
 });
 
-
-// FAQ TOGGLE
-const faqItems = document.querySelectorAll(".faq-item");
-
-faqItems.forEach(item => {
-  const btn = item.querySelector(".faq-question");
-
-  if (btn) {
-    btn.addEventListener("click", () => {
-      item.classList.toggle("active");
-    });
-  }
-});
-
-
-// ACTIVE MENU
-const sections = document.querySelectorAll("section");
-const navItems = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    if (pageYOffset >= sectionTop - 100) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navItems.forEach(a => {
-    a.classList.remove("active");
-    if (a.getAttribute("href") === "#" + current) {
-      a.classList.add("active");
-    }
+document.querySelectorAll(".faq-question").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.classList.toggle("active");
   });
 });
 
+window.addEventListener("DOMContentLoaded", () => {
 
-// SIMPLE FORM ALERT
-const form = document.querySelector("form");
+const cards = document.querySelectorAll(".service-card");
 
-if (form) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    alert("Thank you! We will contact you shortly.");
-    form.reset();
-  });
+if(cards.length >= 6){
+
+cards[0].classList.add("from-left");
+cards[1].classList.add("from-top");
+cards[2].classList.add("from-right");
+cards[3].classList.add("from-bottom");
+cards[4].classList.add("from-left");
+cards[5].classList.add("from-right");
+
+setTimeout(() => {
+cards.forEach(card => {
+card.classList.add("show");
+});
+}, 300);
+
 }
-window.addEventListener("load", () => {
-  const heroLeft = document.querySelector(".hero-left");
-  const heroRight = document.querySelector(".hero-right");
 
-  if (heroLeft) {
-    heroLeft.style.opacity = "0";
-    heroLeft.style.transform = "translateY(30px)";
-    heroLeft.style.transition = "all 0.8s ease";
-  }
-
-  if (heroRight) {
-    heroRight.style.opacity = "0";
-    heroRight.style.transform = "translateY(30px)";
-    heroRight.style.transition = "all 1s ease";
-  }
-
-  setTimeout(() => {
-    if (heroLeft) {
-      heroLeft.style.opacity = "1";
-      heroLeft.style.transform = "translateY(0)";
-    }
-  }, 150);
-
-  setTimeout(() => {
-    if (heroRight) {
-      heroRight.style.opacity = "1";
-      heroRight.style.transform = "translateY(0)";
-    }
-  }, 350);
-});
-
-
-document.getElementById("contactForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  document.getElementById("form-msg").style.display = "block";
-
-  this.reset();
 });
