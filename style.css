@@ -241,7 +241,7 @@ ul {
   padding: 0 0 40px;   /* ✅ remove top padding */
   padding-left: 60px;
 
-  background: url("images/WhatsApp Image 2026-04-08 at 10.27.43 PM.jpeg") center/cover no-repeat;
+  background: url("images/new\ bg.jpeg") center/cover no-repeat;
 }
 
 /* content */
@@ -498,87 +498,214 @@ position: absolute;
 .about-hero-section {
   position: relative;
   height: 100vh;
-  background: url("images/WhatsApp Image 2026-04-08 at 10.27.43 PM.jpeg") center/cover no-repeat;
+  background: url("images/about bg.jpeg") center/cover no-repeat;
   color: #fff;
 }
 
-/* OVERLAY (IMPORTANT) */
+/* OVERLAY */
 .about-overlay {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0.6); /* makes text readable */
+  inset: 0;
+  background: rgba(0,0,0,0.55);
 
   display: flex;
   align-items: center;
+  justify-content: flex-end;   /* move content right side */
 }
 
 /* WRAPPER */
 .about-wrapper {
-  position: relative;
-  z-index: 2;
-  display: flex;
   width: 100%;
+  display: flex;
+  justify-content: flex-end;   /* right align */
+  padding: 0 -22%;
 }
 
 /* CONTENT */
 .about-content {
-  max-width: 520px;
-  margin-right: 60px;
-  text-align: left;
+  max-width: 560px;
+  text-align: left;           /* opposite of home */
 }
-.about-title {
-  color: #ffffff;
-  font-size: 40px;
-  line-height: 1.3;
-}
-/* TEXT STYLING */
-.section-tag {
-  color:#1E7687;
+
+/* SMALL TAG */
+/* Move section-tag to top-left */
+
+.section-tag{
+  color: #57bace;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: 600;
+
+  display: block;
+  margin-bottom: 15px;
+ 
+
+  transform: translateY(-40px); /* move upward */
 }
 
+/* MAIN TITLE */
+.about-title,
 .section-title {
-  font-size: 40px;
-  margin: 15px 0;
-  line-height: 1.3;
+  
+  font-size: 41px;            /* same premium big style */
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 10px 0 38px;   /* less top margin */
+  color: #fff;
+
+  transform: translateY(-0px); /* move up */
 }
 
+/* TEXT */
 .about-content p {
-  color: #ffffff;
-  margin-bottom: 2px;
+  font-size: 22px;
   line-height: 1.7;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
 /* LIST */
 .about-list {
-  margin-top: 20px;
+  margin-top: 50px;
+  list-style: none;
 }
 
 .about-list li {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  font-size: 18px;
   color: #fff;
 }
 
-/* REMOVE UNUSED (IMPORTANT) */
-/* DELETE these from your code:
-.about-grid {}
-.about-image {}
-*/
+/* ===============================
+   ABOUT SECTION RESPONSIVE
+   ADD BELOW YOUR CURRENT CSS
+================================= */
 
-/* MOBILE FIX */
-@media (max-width: 768px) {
-  .about-wrapper {
-    justify-content: center;
-    padding: 0 20px;
+/* Tablet */
+@media (max-width:1024px){
+
+  .about-hero-section{
+    height: auto;
+    min-height: 100vh;
+    background-position: center;
   }
 
-  .about-content {
-    margin-right: 0;
-    text-align: center;
+  .about-overlay{
+    justify-content: center;
+    padding: 120px 40px 80px;
+  }
+
+  .about-wrapper{
+    justify-content: center;
+    padding: 0;
+  }
+
+  .about-content{
+    max-width: 700px;
+    text-align: left;
+  }
+
+  .section-tag{
+    font-size: 18px;
+    transform: translateY(0);
+    margin-bottom: 18px;
+  }
+
+  .about-title,
+  .section-title{
+    font-size: 52px;
+    line-height: 1.15;
+    margin: 0 0 25px;
+  }
+
+  .about-content p{
+    font-size: 22px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+  }
+
+  .about-list{
+    margin-top: 30px;
+  }
+
+  .about-list li{
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+}
+
+
+/* Mobile */
+@media (max-width:768px){
+
+  /* More height for About Hero */
+
+.about-hero-section{
+  min-height: 120vh;   /* bigger than full screen */
+  height: auto;
+}
+
+  .about-overlay{
+    background: rgba(0, 0, 0, 0.65) !important; /* dark layer */
+    padding: 110px 25px 60px;
+  }
+
+  .about-content{
+    max-width: 100%;
+  }
+
+  .section-tag{
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+
+  .about-title,
+  .section-title{
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+
+  .about-content p{
+    font-size: 17px;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .about-list{
+    margin-top: 22px;
+  }
+
+  .about-list li{
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}
+
+
+/* Small Mobile */
+@media (max-width:480px){
+
+  .about-overlay{
+    padding: 95px 18px 50px;
+  }
+
+  .section-tag{
+    font-size: 13px;
+  }
+
+  .about-title,
+  .section-title{
+    font-size: 28px;
+  }
+
+  .about-content p{
+    font-size: 15px;
+  }
+
+  .about-list li{
+    font-size: 14px;
   }
 }
 /* STATS */
@@ -1222,10 +1349,12 @@ position: absolute;
 
   /* HERO BACKGROUND WIDTH FIX */
   .hero {
+    background-position: 70% center;
     margin-top: 0;
     padding: 10px 15px 90px;
      /* show more width */
   }
+  
 
   /* CONTENT */
   .hero-content h1 {
@@ -1440,36 +1569,6 @@ margin-bottom: -35px;
 
 /* ================= ABOUT HERO RESPONSIVE ================= */
 
-/* BASE */
-@media (max-width: 768px) {
-
-  .about-hero-section {
-    padding: 70px 15px 90px;   /* same spacing as home hero */
-    min-height: auto;
-  }
-
-  .about-overlay {
-    align-items: center;   /* vertical center like hero */
-  }
-
-  .about-wrapper {
-    justify-content: flex-start; /* left aligned like home */
-  }
-
-  .about-content {
-    max-width: 100%;
-  }
-
-  .about-title {
-    font-size: 28px;      /* match home hero */
-    line-height: 1.2;
-  }
-
-  .about-content p {
-    font-size: 13px;
-  }
-
-}
 
 
 @media (max-width: 480px) {
@@ -1513,11 +1612,11 @@ margin-bottom: -35px;
     min-height: 71vh;   /* 🔥 reduce height */
     height: auto;       /* override 100vh */
     
-    padding: 20px 15px 40px;  /* reduce top & bottom space */
+    padding: 20px 15px 50px;  /* reduce top & bottom space */
   }
 
  .about-overlay {
-  background: none !important;
+    background: rgba(0, 0, 0, 0.65) !important; /* dark layer */
 }
 
   .about-wrapper {
@@ -1546,6 +1645,7 @@ margin-bottom: -35px;
   }
 
   .about-list {
+    color: #102241;
     margin-top: 18px;
   }
 
@@ -1562,7 +1662,7 @@ margin-bottom: -35px;
   }
     .about-hero-section {
      /* ⬅️ compact hero */
-    padding: 10px 15px 90px;
+    padding: 20px 15px 90px;
  
   }
 
@@ -1705,11 +1805,12 @@ margin-bottom: -35px;
 @media (min-width: 400px) and (max-width: 430px) {
 
   .about-hero-section {
-    min-height: 50vh;
+    min-height: 87vh;
     padding: 40px 15px;   /* same as iPhone SE */
   }
 
   .about-content {
+    margin-bottom: 100px;
     text-align: left;
     max-width: 100%;
   }
@@ -1726,7 +1827,7 @@ margin-bottom: -35px;
   }
 
   .about-content p {
-    font-size: 15px;
+    font-size: 13px;
   }
 
   .about-list li {
@@ -1778,6 +1879,7 @@ margin-bottom: -35px;
     margin-bottom: 6px;
     display: block;
   }
+  
 
   .section-padding {
     padding: 20px 0;
@@ -2350,3 +2452,24 @@ font-family:'Poppins',sans-serif;
 }
 
 
+/* Show FAQ + Contact normally */
+.faq-item,
+.contact-info,
+.contact-form,
+.contact-section,
+.faq-section {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  visibility: visible !important;
+}
+
+
+@media (max-width:768px){
+
+  .services-page .section-tag{
+    font-size: 12px;
+    margin-bottom: -87px;
+    display: block;
+  }
+
+}
