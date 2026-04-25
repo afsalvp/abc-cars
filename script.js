@@ -30,9 +30,16 @@ window.addEventListener("load", () => {
 
 
 // ================= SCROLL REVEAL =================
+// Only animate service + stats
+
 const revealItems = document.querySelectorAll(
-  ".service-card, .stat-box, .faq-item, .contact-info, .contact-form"
+  ".service-card, .stat-box"
 );
+
+revealItems.forEach(item => {
+  item.style.opacity = "0";
+  item.style.transform = "translateY(40px)";
+});
 
 window.addEventListener("scroll", () => {
   const triggerBottom = window.innerHeight * 0.85;
@@ -47,12 +54,7 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
-revealItems.forEach(item => {
-  item.style.opacity = "0";
-  item.style.transform = "translateY(40px)";
-});
-
+// ================= MOBILE MENU =================
 const menuBtn = document.getElementById("menuBtn");
 const navLinks = document.getElementById("navLinks");
 
@@ -68,12 +70,16 @@ document.querySelectorAll(".nav-links a").forEach(link => {
   });
 });
 
+
+// ================= FAQ TOGGLE =================
 document.querySelectorAll(".faq-question").forEach(btn => {
   btn.addEventListener("click", () => {
     btn.parentElement.classList.toggle("active");
   });
 });
 
+
+// ================= SERVICE CARD ENTRY =================
 window.addEventListener("DOMContentLoaded", () => {
 
 const cards = document.querySelectorAll(".service-card");
@@ -96,3 +102,7 @@ card.classList.add("show");
 }
 
 });
+
+
+
+
