@@ -1524,52 +1524,49 @@ margin-bottom: -35px;
 
 @media (max-width: 768px) {
 
-  /* FOOTER */
   .footer {
-    padding-top: 40px;
-    text-align: center;
+    padding-top: 25px;   /* tighter */
+    text-align: left;    /* better for columns */
   }
 
-  /* GRID */
   .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;   /* tighter spacing */
-    padding-bottom: 18px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* 👈 2 columns */
+    gap: 12px;   /* reduced gap */
+    padding-bottom: 10px;
   }
 
-  /* HEADINGS SMALLER */
-  .footer h3 {
-    font-size: 16px;
-    margin-bottom: 8px;
+  /* OPTIONAL: Make first section full width (logo/about) */
+  .footer-grid > :first-child {
+    grid-column: span 2;
   }
-
+.footer h3 {
+    text-align: center;
+}
+  /* TEXT SIZE */
+  .footer h3,
   .footer h4 {
-    font-size: 15px;
-    margin-bottom: 8px;
+    font-size: 14px;
+    margin-bottom: 6px;
   }
 
-  /* TEXT SMALL + TIGHT */
   .footer p,
   .footer li {
-    font-size: 13px;
-    margin-bottom: 6px;
-    line-height: 1.4;
+    font-size: 14px;
+    margin-bottom: 4px;
+    line-height: 1.3;
   }
 
-  /* LINKS CLEAN */
-  .footer-links {
-    padding: 0;
-  }
-
+  /* REMOVE EXTRA SPACE */
   .footer-links li {
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
 
-  /* FOOTER BOTTOM */
   .footer-bottom {
-    font-size: 11px;
-    padding: 12px 8px;
+    font-size: 10px;
+    padding: 8px;
   }
+
 }
 
 
